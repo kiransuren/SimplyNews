@@ -1,6 +1,7 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
+  darkMode: 'media',
   purge: ['./pages/**/*.js', './components/**/*.js'],
   theme: {
     extend: {
@@ -17,6 +18,9 @@ module.exports = {
       colors: {
         'light-blue': colors.lightBlue,
         cyan: colors.cyan,
+        'background':'#30353D',
+        'grisaille':'#57606f',
+        sidebar: '#8097BD'
       },
     },
     fontFamily: {
