@@ -5,6 +5,9 @@ const cheerio = require('cheerio');
 const PORT = process.env.PORT || 5000
 const asyncify = require('express-asyncify');
 
+var cors = require('cors');
+app.use(cors({origin: true, credentials: true}));
+
 app.get('/', (req,res) =>
 {
     res.send("Hello World! sd");
@@ -38,7 +41,6 @@ router.route('/articles/:org')
         res.json(ponse)
     });
 
-
 //All routes will be prefixed by /api
 app.use('/api', router)
 
@@ -70,10 +72,10 @@ async function getAPNews() {
     return temp_arr
   }
 
-
+const client_address = "http://192.168.0.175:3000/"
 let axiosConfig = {
     header : {
-      "origin":"http://www.yourpage.com",
+      "origin":client_address,
       'Access-Control-Allow-Origin': '*'
     }
 }
